@@ -3,6 +3,12 @@ window.onload = function () {
     .getElementById("buttonrefresh")
     .addEventListener("click", generatePassword);
   generatePassword();
+  document.getElementById("buttoncopy").addEventListener("click", function (e) {
+    navigator.clipboard.writeText(document.getElementById("passinput").value);
+    const toastcopy = document.getElementById("toastcopy");
+    const toast = new bootstrap.Toast(toastcopy);
+    toast.show();
+  });
 };
 
 function generatePassword() {
